@@ -32,7 +32,7 @@ function App() {
         <Routes>
 
           {/* LOGIN PAGE*/}
-          <Route path="/" element={<LoginPage onLogin={() => handleLogin(true)} />} />
+          <Route path="/login" element={<LoginPage onLogin={() => handleLogin(true)} />} />
 
         
           <Route
@@ -43,7 +43,7 @@ function App() {
               </PrivateRoute>
             }
           >
-            <Route path="dashboard" element={<Dashboard />} />
+            <Route index element={<Dashboard />} />
             <Route path="addtask" element={<AddTask />} />
             <Route path="listtask" element={<ListTasks />} />
             <Route path="report" element={<Report />} />

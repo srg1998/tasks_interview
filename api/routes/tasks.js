@@ -8,11 +8,16 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const { title } = req.body;
+  const { title, description,assignedTo } = req.body;
   if (!title || title.trim() === '') {
     return res.status(400).json({ error: 'Title is required' });
   }
-  const task = { id: tasks.length + 1, title, description, status: 'Pending' };
+
+  if (!description || description.trim() === '') {
+    return res.status(400).json({ error: 'Description is required' });
+  }
+
+  const task = { id: tasks.length + 1, title, description,assignedTo, status: 'Pending', createdAt: Date.now() };
   tasks.push(task);
   res.status(201).json(task);
 });

@@ -24,7 +24,7 @@ export default function TaskForm() {
 
         fetchUsers();
     }, []);
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setMessage('');
@@ -59,7 +59,7 @@ export default function TaskForm() {
     };
 
 
-    return users ? <>  <h2>Add a task</h2>  <div className="task-form">
+    return users ? <>  <div className="task-form">
 
         <form onSubmit={handleSubmit}>
             <div className="form-row">

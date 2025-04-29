@@ -26,11 +26,12 @@ export default function LoginForm({onLogin}) {
             const data = await response.json();
 
             // Save token or session info to localStorage
-            localStorage.setItem('isLoggedIn', 'true');
-            localStorage.setItem('role', data.role);
+            sessionStorage.setItem('isLoggedIn', 'true');
+            sessionStorage.setItem('role', data.role);
+            sessionStorage.setItem('username', data.username);
 
             onLogin();
-            navigate('/dashboard');
+            navigate('/');
 
         } catch (err) {
             setError(err.message)
