@@ -1,0 +1,28 @@
+.task-form {
+    width: 50%;
+    margin: 0px auto;
+    border: 1px solid black;
+    padding: 24px;
+
+}
+
+
+
+.form-row {
+    display: flex;
+    justify-content: center;
+    align-self: start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+input{
+    height: 25px;
+}
+
+textarea {
+    resize: vertical;       
+    max-width: 100%; 
+    min-height: 50px;      
+    resize: none;
+  }
