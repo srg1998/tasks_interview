@@ -4,7 +4,8 @@ const PORT = 3000;
 
 const taskRoutes = require('./routes/tasks');
 const userRoutes = require('./routes/users');
-
+const cors = require('cors');
+app.use(cors());  
 app.use(express.json());
 
 app.use('/tasks', taskRoutes);

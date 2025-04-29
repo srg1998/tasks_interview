@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
   if (!title || title.trim() === '') {
     return res.status(400).json({ error: 'Title is required' });
   }
-  const task = { id: tasks.length + 1, title, status: 'Pending' };
+  const task = { id: tasks.length + 1, title, description, status: 'Pending' };
   tasks.push(task);
   res.status(201).json(task);
 });
