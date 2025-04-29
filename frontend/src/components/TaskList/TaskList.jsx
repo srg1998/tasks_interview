@@ -12,7 +12,8 @@ export default function TaskList() {
                 const response = await fetch(`${process.env.REACT_APP_API_URL}/tasks`);
                 const data = await response.json();
                 const user = sessionStorage.getItem("username");
-                const userTasks = data.filter(task => task.assignedTo === user);
+                const role = sessionStorage.getItem("role");
+                const userTasks = role === "admin" ? data : data.filter(task => task.assignedTo === user);
                 setTasks(userTasks);
             } catch (err) {
                 console.error("Error fetching tasks:", err);
